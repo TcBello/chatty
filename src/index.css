@@ -1,0 +1,22 @@
+:root {
+  --palette-white: #F1F6F9;
+  --palette-blue: #14274E;
+  --palette-blue-2: #365bb2;
+  --palette-blue-grey: #394867;
+  --palette-grey: #9BA4B4;
+  --palette-grey-2: #929292;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

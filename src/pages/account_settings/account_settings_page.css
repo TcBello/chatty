@@ -1,0 +1,44 @@
+.account-avatar-container {
+    position: relative;
+    padding-right: 20px;
+}
+
+.account-camera-button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--palette-blue);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.account-camera-button:hover {
+    background-color: var(--palette-blue-2);
+}
+
+.account-edit-icon {
+    height: 30px;
+    width: 30px;
+    color: var(--palette-blue);
+}
+
+.account-edit-icon:hover {
+    color: var(--palette-blue-2);
+}
+
+.account-cancel-edit-button {
+    font-weight: 500;
+}
+
+.account-save-edit-button {
+    background-color: var(--palette-blue);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.account-save-edit-button:hover {
+    background-color: var(--palette-blue-2);
+}
