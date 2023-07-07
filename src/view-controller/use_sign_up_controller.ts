@@ -5,6 +5,7 @@ const useSignUpController = () => {
   const [password, setPassword] = useState<string | null>(null);
   const [firstName, setFirstName] = useState<string | null>(null);
   const [lastName, setLastName] = useState<string | null>(null);
+  const [username, setUsername] = useState<string | null>(null);
   const [gender, setGender] = useState<string | null>(null);
   const [years, setYears] = useState<number[]>([]);
   const [month, setMonth] = useState<string | null>(null);
@@ -26,6 +27,10 @@ const useSignUpController = () => {
 
   function onChangeLastName(e: React.ChangeEvent<HTMLInputElement>) {
     setLastName(e.target.value);
+  }
+
+  function onChangeUsername(e: React.ChangeEvent<HTMLInputElement>) {
+    setUsername(e.target.value);
   }
 
   function onChangeGender(value: string) {
@@ -62,6 +67,7 @@ const useSignUpController = () => {
     password,
     firstName,
     lastName,
+    username,
     gender,
     years,
     month,
@@ -72,6 +78,7 @@ const useSignUpController = () => {
     onChangePassword,
     onChangeFirstName,
     onChangeLastName,
+    onChangeUsername,
     onChangeGender,
     onChangeMonth,
     onChangeDay,

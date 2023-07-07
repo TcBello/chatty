@@ -31,6 +31,7 @@ export const SignUpDialog = (props: {
     password,
     firstName,
     lastName,
+    username,
     gender,
     years,
     month,
@@ -41,6 +42,7 @@ export const SignUpDialog = (props: {
     onChangePassword,
     onChangeFirstName,
     onChangeLastName,
+    onChangeUsername,
     onChangeGender,
     onChangeMonth,
     onChangeDay,
@@ -89,6 +91,13 @@ export const SignUpDialog = (props: {
                   onChange={onChangeLastName}
                 />
               </Flex>
+              {/* USERNAME TEXT FIELD */}
+              <Input
+                placeholder="Username"
+                variant={"filled"}
+                size="lg"
+                onChange={onChangeUsername}
+              />
               {/* EMAIL TEXT FIELD */}
               <Input
                 placeholder="Email"
