@@ -137,7 +137,7 @@ const useChatController = () => {
     setMessage(e.target.value);
   }
 
-  async function getChatRoom(userID: string) {
+  async function getChatRoom(userID: string, onStart: boolean) {
     var result = await chatViewModel.getChatDispatch(userID);
     const room = (result.payload as any).data as ChatRoomEntity;
     if (result.meta.requestStatus === DispatchStatus.fulfilled) {
@@ -148,7 +148,9 @@ const useChatController = () => {
       //   await getMessage();
       // });
     } else {
-      showErrorToast(toast, "Unable to obtain chat room");
+      if (!onStart) {
+        showErrorToast(toast, "Unable to obtain chat room");
+      }
     }
   }
 
@@ -165,7 +167,7 @@ const useChatController = () => {
       // console.log(room);
       // socket.emit("join-room", room.id);
       // setChatRoom(room);
-      await getChatRoom(userViewModel.user.id);
+      await getChatRoom(userViewModel.user.id, false);
       setIsSearching(false);
     } else {
       setIsSearching(false);

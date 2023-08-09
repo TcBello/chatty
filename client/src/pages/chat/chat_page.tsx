@@ -106,7 +106,7 @@ export const ChatPage = () => {
       getUserDataDispatch(userContext.id);
       if (user) {
         if (user.image) setAvatar(user.image);
-        getChatRoom(user.id);
+        getChatRoom(user.id, true);
       }
     }
   }, [userContext, dispatch]);
