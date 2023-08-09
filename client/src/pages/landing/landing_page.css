@@ -3,3 +3,67 @@
 * {
     font-family: 'Roboto';
 }
+
+.landing-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #E2F0F9;
+}
+
+.landing-chatty {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.landing-info {
+    font-size: 36px;
+    text-align: center;
+}
+
+.landing-start-chatting-button {
+    border: solid 3px var(--palette-blue);
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.landing-start-chatting-button:hover {
+    background-color: var(--palette-blue-2);
+    border: solid 3px var(--palette-blue-2);
+    color: white;
+}
+
+.landing-get-started-button {
+    background-color: var(--palette-blue);
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.landing-get-started-button:hover {
+    background-color: var(--palette-blue-2);
+}
+
+@media only screen and (max-width: 768px) {
+    .landing-chatty {
+        font-size: 32px;
+        font-weight: bold;
+        padding-top: 2vh;
+    }
+    
+    .landing-info {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .landing-start-chatting-button {
+        border: solid 3px var(--palette-blue);
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
