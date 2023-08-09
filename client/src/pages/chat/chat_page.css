@@ -48,6 +48,16 @@
     justify-content: start;
 }
 
+.chat-end-chat-button-mobile {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--palette-blue);
+    border-radius: 8px;
+    padding: 12px 20px;
+    justify-content: start;
+}
+
 .chat-current-user-message {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;

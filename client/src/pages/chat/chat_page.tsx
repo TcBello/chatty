@@ -52,6 +52,7 @@ import formatTime from "../../components/formatted_time";
 import AppColor from "../../components/colors";
 import { MessageType } from "../../components/enums";
 import ImageViewer from "react-simple-image-viewer";
+import { useMediaQuery } from "react-responsive";
 
 export const ChatPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -95,6 +96,10 @@ export const ChatPage = () => {
   } = useChatController();
 
   const featureActivated: boolean = messageList.length >= 15;
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
 
   useEffect(() => {
     if (userContext) {
@@ -261,7 +266,14 @@ export const ChatPage = () => {
               />
             )}
             {/* // END CHAT BUTTON */}
-            <button className="chat-end-chat-button" onClick={endChatRoom}>
+            <button
+              className={
+                isMobile
+                  ? "chat-end-chat-button-mobile"
+                  : "chat-end-chat-button"
+              }
+              onClick={endChatRoom}
+            >
               End Chat
             </button>
             {/* CURRENT USER AVATAR */}

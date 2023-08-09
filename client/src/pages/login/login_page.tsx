@@ -25,6 +25,7 @@ import { SignUpDialog } from "./components/sign_up_dialog";
 import { Navigate, useNavigate } from "react-router-dom";
 import useLoginController from "../../view-controller/use_login_controller";
 import { AuthContext } from "../../components/auth_provider";
+import { useMediaQuery } from "react-responsive";
 
 export const LoginPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -42,8 +43,79 @@ export const LoginPage = () => {
     onEnterLogin,
   } = useLoginController();
 
+  const isMobile = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
+
   if (currentUser) {
     return <Navigate to={"/chat"} replace />;
+  }
+
+  if (isMobile) {
+    return (
+      <Container className="login-container">
+        <VStack justifyContent={"center"} height="full">
+          {/* CHATTY HEADER */}
+          <Text className="login-title">Chatty</Text>
+          {/* CHATTY TAGLINE */}
+          <Text className="login-title2" textAlign={"center"}>
+            Meet and get to know new people
+          </Text>
+          <Box height={5} />
+          {/* EMAIL TEXT FIELD */}
+          <Input
+            placeholder="Email"
+            size="lg"
+            onChange={onChangeEmail}
+            variant="flush"
+          />
+          {/* PASSWORD TEXT FIELD */}
+          <Input
+            placeholder="Password"
+            type="password"
+            size="lg"
+            onChange={onChangePassword}
+            onKeyUp={onEnterLogin}
+            variant="flush"
+          />
+          <Box height={5} />
+          {/* LOGIN BUTTON */}
+          <button className="login-button" onClick={login}>
+            Log In
+          </button>
+          {/* FORGOT BUTTON */}
+          <motion.button
+            className="login-forgot-button"
+            whileHover={{ textDecoration: "underline" }}
+            onClick={onOpen}
+          >
+            Forgot password?
+          </motion.button>
+          <Box height={1} />
+          <Divider />
+          <Box height={1} />
+          {/* SIGN UP BUTTON */}
+          <button
+            className="login-sign-up-button"
+            onClick={signupDialog.onOpen}
+          >
+            Sign Up
+          </button>
+        </VStack>
+        {/* FORGOT PASSWORD POP UP */}
+        <ForgotPasswordDialog
+          onClose={onClose}
+          isOpen={isOpen}
+          cancelRef={cancelRef}
+        />
+        {/* SIGN UP POP UP */}
+        <SignUpDialog
+          onClose={signupDialog.onClose}
+          isOpen={signupDialog.isOpen}
+          cancelRef={cancelRef}
+        />
+      </Container>
+    );
   }
 
   return (
