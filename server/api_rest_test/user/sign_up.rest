@@ -1,0 +1,38 @@
+POST http://localhost:3001/api/user/sign-up HTTP/1.1
+Content-Type: application/json
+
+# {
+#     "id": "test-id",
+#     "firstName": "Thom Carlo",
+#     "lastName": "Bello",
+#     "username": "Tcbello",
+#     "email": "bellothomcarlo@gmail.com",
+#     "birthday": "June 16, 2001",
+#     "gender": "Male",
+#     "country": "Philippines",
+#     "image": "test-image-url",
+#     "chattingState": "idle",
+#     "preferences": {
+#         "gender": "any",
+#         "country": "any",
+#         "interests": []
+#     }
+# }
+
+{
+    "id": "ayaka-id",
+    "firstName": "Ayaka",
+    "lastName": "Kamisato",
+    "username": "Ayaya",
+    "email": "ayaka@gmail.com",
+    "birthday": "June 17, 2001",
+    "gender": "Female",
+    "country": "Philippines",
+    "image": "test-image-url",
+    "chattingState": "idle",
+    "preferences": {
+        "gender": "any",
+        "country": "any",
+        "interests": []
+    }
+}

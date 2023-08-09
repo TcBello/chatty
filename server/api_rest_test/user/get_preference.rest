@@ -1,0 +1,2 @@
+GET http://localhost:3001/api/user/test-id/preference HTTP/1.1
+Content-Type: application/json

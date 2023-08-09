@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/message HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "message-id",
+    "chatRoomID": "b0dfffc8-614c-43c5-86f3-3fcff50db571",
+    "sender": {
+      "id": "ayaka-id",
+      "username": "Ayaya"
+    },
+    "text": "Hi, how are you?",
+    "type": "text",
+    "imageURL": ""
+}

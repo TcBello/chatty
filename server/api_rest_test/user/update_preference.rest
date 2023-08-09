@@ -1,0 +1,10 @@
+PUT http://localhost:3001/api/user/ayaka-id/preference HTTP/1.1
+Content-Type: application/json
+
+{
+    "gender": "female",
+    "country": "Philippines",
+    "interests": [
+        "Valorant PH"
+    ]
+}
