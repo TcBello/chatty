@@ -120,10 +120,6 @@ export const ChatPage = () => {
     });
   }, [socket]);
 
-  function test() {
-    console.log(user);
-  }
-
   const EmptyConversation = () => {
     return (
       <VStack flex={2} width={"full"} justifyContent="center">
@@ -141,7 +137,6 @@ export const ChatPage = () => {
         <button className="chat-filter-button" onClick={onOpen}>
           Filter Settings
         </button>
-        <button onClick={test}>TEST USER DATA CONTEXT</button>
       </VStack>
     );
   };
