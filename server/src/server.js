@@ -14,7 +14,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chatty.vercel.app",
     methods: ["GET", "POST", "PUT"],
   },
 });
@@ -46,6 +46,7 @@ io.on("connection", (socket) => {
   });
 });
 
+app.get("/", (req, res) => res.sen("<h1>Welcome to API</h1>"));
 app.use("/api/user", UserRoutes);
 app.use("/api/chat", ChatRoomRoutes);
 app.use("/api/message", MessageRoutes);
