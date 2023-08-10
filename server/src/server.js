@@ -14,7 +14,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://tcbello-chatty.vercel.app",
     methods: ["GET", "POST", "PUT"],
   },
 });
@@ -44,6 +44,18 @@ io.on("connection", (socket) => {
   socket.on("end-chat", (data) => {
     socket.to(data).emit("receive-end-chat", data);
   });
+});
+
+app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://tcbello-chatty.vercel.app"
+  ); // update to match the domain you will make the request from
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
 
 app.get("/", (req, res) => res.send("<h1>Welcome to API</h1>"));
