@@ -14,7 +14,8 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://tcbello-chatty.vercel.app",
+    // origin: "https://tcbello-chatty.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "PUT"],
   },
 });

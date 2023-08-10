@@ -18,6 +18,7 @@ import DataFirebaseStorageRepository from "../models/data/firebase_storage_repos
 
 const useChatController = () => {
   const socket = io("https://tcbello-chatty-api.vercel.app").connect();
+  // const socket = io("http://localhost:3001").connect();
 
   const [message, setMessage] = useState<string | null>(null);
   const [messageList, setMessageList] = useState<MessageEntity[]>([]);
