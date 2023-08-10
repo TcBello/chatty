@@ -10,35 +10,13 @@ import { AuthProvider } from "./components/auth_provider";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { UserProvider } from "./components/user_provider";
+import { socket } from "./components/socket";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-root.render(
-  // DEV MODE
-  <React.StrictMode>
-    <ChakraProvider>
-      <Provider store={store}>
-        <AuthProvider>
-          <UserProvider>
-            <RouterProvider router={AppRouter.router} />
-          </UserProvider>
-        </AuthProvider>
-      </Provider>
-    </ChakraProvider>
-  </React.StrictMode>
 
-  // PROD MODE
-  // <ChakraProvider>
-  //   <Provider store={store}>
-  //     <AuthProvider>
-  //       <UserProvider>
-  //         <RouterProvider router={AppRouter.router} />
-  //       </UserProvider>
-  //     </AuthProvider>
-  //   </Provider>
-  // </ChakraProvider>
-);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

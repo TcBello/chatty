@@ -45,6 +45,10 @@ io.on("connection", (socket) => {
   socket.on("end-chat", (data) => {
     socket.to(data).emit("receive-end-chat", data);
   });
+
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
+  });
 });
 
 app.get("/", (req, res) => res.send("<h1>Welcome to API</h1>"));

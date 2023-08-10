@@ -13,11 +13,14 @@ import { showErrorToast } from "../components/app_toast";
 import { ChatRoomEntity } from "../models/entities/chat_room_entity";
 import { v4 as uuidv4 } from "uuid";
 import DataFirebaseStorageRepository from "../models/data/firebase_storage_repository";
+import { socket } from "../components/socket";
 
 // const socket = io("https://tcbello-chatty-api.vercel.app").connect();
+// const socket = io("http://localhost:3001");
 
 const useChatController = () => {
-  const socket = io("https://tcbello-chatty-api.vercel.app").connect();
+  // const socket = io("https://tcbello-chatty-api.vercel.app");
+  // const socket = io("http://localhost:3001", { autoConnect: true });
   // const socket = io("http://localhost:3001").connect();
 
   const [message, setMessage] = useState<string | null>(null);
