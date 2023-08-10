@@ -46,7 +46,7 @@ io.on("connection", (socket) => {
   });
 });
 
-app.get("/", (req, res) => res.sen("<h1>Welcome to API</h1>"));
+app.get("/", (req, res) => res.send("<h1>Welcome to API</h1>"));
 app.use("/api/user", UserRoutes);
 app.use("/api/chat", ChatRoomRoutes);
 app.use("/api/message", MessageRoutes);
