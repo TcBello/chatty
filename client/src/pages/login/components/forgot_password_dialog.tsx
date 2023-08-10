@@ -19,7 +19,8 @@ export const ForgotPasswordDialog = (props: {
   isOpen: boolean;
   cancelRef: React.MutableRefObject<any>;
 }) => {
-  const { email, onChangeEmail } = useForgotPasswordController();
+  const { email, onChangeEmail, onForgotPassword } =
+    useForgotPasswordController();
 
   return (
     <AlertDialog
@@ -50,7 +51,10 @@ export const ForgotPasswordDialog = (props: {
             </button>
             <button
               className="login-forgot-submit-button"
-              onClick={props.onClose}
+              onClick={async () => {
+                await onForgotPassword();
+                props.onClose();
+              }}
             >
               Submit
             </button>
