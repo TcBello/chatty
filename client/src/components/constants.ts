@@ -268,4 +268,4 @@ export const countries = [
   "Åland Islands",
 ];
 
-export const apiHost = "https://chatty-api.vercel.app/api";
+export const apiHost = "https://tcbello-chatty-api.vercel.app/api";
