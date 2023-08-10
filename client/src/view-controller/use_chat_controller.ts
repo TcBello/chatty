@@ -14,7 +14,7 @@ import { ChatRoomEntity } from "../models/entities/chat_room_entity";
 import { v4 as uuidv4 } from "uuid";
 import DataFirebaseStorageRepository from "../models/data/firebase_storage_repository";
 
-const socket = io(apiHost).connect();
+const socket = io("https://tcbello-chatty-api.vercel.app").connect();
 
 const useChatController = () => {
   const [message, setMessage] = useState<string | null>(null);
