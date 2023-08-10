@@ -29,7 +29,7 @@ server.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
 
-io.sockets.on("connection", (socket) => {
+io.on("connection", (socket) => {
   console.log(`Connected: ${socket.id}`);
 
   socket.on("join-room", (data) => {
